@@ -1,5 +1,18 @@
+import random
+
 words = open("words.txt","r")
 
-wordlist = words.readline(-1)
+wordlist = []
+for word in words: 
+    wordlist.append(word[:-1])
 
-print(wordlist)
+answer = random.choice(wordlist)
+
+answer_array = list(answer)
+
+print(answer)
+print(answer_array)
+guess = ""
+
+while guess != answer:
+    guess = input("Guess: ")
