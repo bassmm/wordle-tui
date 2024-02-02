@@ -1,6 +1,7 @@
 # wordle-tui
 
 A simple terminal-based Wordle game, where you can guess a hidden word within a limited number of attempts.
+> Game State: Semi-Playable [still contains debuging features and major bug]
 
 ## How to Play
 
@@ -28,7 +29,7 @@ Follow the on-screen instructions to guess the hidden word. You have a limited n
 
   - Terminal-based gameplay.        
   - Randomly generated hidden words for replayability.
-  - Limited attempts to guess the word.
+  - 5 attempts to guess the word.
 
 ### Requirements
 - Python 3.x
@@ -42,3 +43,6 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ### Acknowledgments
 Inspired by the classic NYTimes Wordle game.
+
+#### To-Do
+- FIX Major Bug in checking mechanism caused when there exists duplicate letters in the word
