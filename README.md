@@ -6,23 +6,14 @@ A simple terminal-based Wordle game, where you can guess a hidden word within a 
 ## How to Play
 
 1. Clone the repository to your local machine:
-```
+``git clone https://github.com/bassmm/wordle-tui.git``
 
-git clone https://github.com/bassmm/wordle-tui.git
+2. Navigate to the project directory:
+``cd wordle-tui``
 
-```
-3. Navigate to the project directory:
-```
+3. Run the game:
+``python main.py``    
 
-cd wordle-tui
-
-```
-Run the game:
-```
-
-python main.py
-
-```    
 Follow the on-screen instructions to guess the hidden word. You have a limited number of attempts.
 
 ## Features
