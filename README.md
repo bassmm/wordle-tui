@@ -1,7 +1,7 @@
 # wordle-tui
 
 A simple terminal-based Wordle game, where you can guess a hidden word within a limited number of attempts.
-> Game State: Semi-Playable [still contains debuging features and major bug]
+> Game State: Playable
 
 ## How to Play
 
@@ -36,4 +36,5 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 Inspired by the classic NYTimes Wordle game.
 
 #### To-Do
-- FIX Major Bug in checking mechanism caused when there exists duplicate letters in the word
+- ~~FIX Major Bug in checking mechanism caused when there exists duplicate letters in the word~~
+- Display available keys left
