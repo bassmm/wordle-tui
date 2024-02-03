@@ -28,7 +28,15 @@ def guessing(valid_guesses: list[str], answer: str) -> bool:
                 guess_letters[x] = f'{green}{guess_letters[x]}{color_end}'
             elif guess_letters[x] in list(answer):  # Check 3: if letter in guess even exists in answer, yellow
                 guess_letters[x] = f'{yellow}{guess_letters[x]}{color_end}'
-
+        for letter in guess:  # Check 4: gets the best result when duplicate letters pass previous checks
+            if len(set(answer)) == len(answer):  # Check 4: Making sure duplicate letters behave as expected
+                if f'{yellow}{letter}{color_end}' in guess_letters and f'{green}{letter}{color_end}' in guess_letters:
+                    impostor_index = guess_letters.index(f'{yellow}{letter}{color_end}')
+                    guess_letters[impostor_index] = letter
+            if len(set(answer)) + 1 == len(answer) and len(set(guess)) == 3:
+                if f'{yellow}{letter}{color_end}' in guess_letters and f'{yellow}{letter}{color_end}' in guess_letters:
+                    impostor_index = guess_letters.index(f'{yellow}{letter}{color_end}')
+                    guess_letters[impostor_index] = letter
         guesses.append(guess_letters)
         guess_count += 1
     if guess == answer:
@@ -41,7 +49,7 @@ def main():
     answers = import_words_to_array("answers.txt")
 
     answer = (random.choice(answers))
-    print(f'answer(for debugging) = {answer}')
+#    print(f'answer(for debugging) = {answer}')  # Uncomment line for debugging
     win = guessing(words, answer)
     if win:
         print(f'Congrats! The answer as indeed: {answer} :)')
