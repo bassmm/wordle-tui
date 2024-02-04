@@ -1,34 +1,26 @@
 # wordle-tui
 
 A simple terminal-based Wordle game, where you can guess a hidden word within a limited number of attempts.
+> Game State: Playable
 
 ## How to Play
 
 1. Clone the repository to your local machine:
-```
+``git clone https://github.com/bassmm/wordle-tui.git``
 
-   git clone https://github.com/bassmm/wordle-tui.git
+2. Navigate to the project directory:
+``cd wordle-tui``
 
-```
-3. Navigate to the project directory:
-```
+3. Run the game:
+``python main.py``    
 
-  cd wordle-tui
-
-```
-Run the game:
-```
-
-   python main.py
-
-```    
 Follow the on-screen instructions to guess the hidden word. You have a limited number of attempts.
 
 ## Features
 
   - Terminal-based gameplay.        
   - Randomly generated hidden words for replayability.
-  - Limited attempts to guess the word.
+  - 5 attempts to guess the word.
 
 ### Requirements
 - Python 3.x
@@ -42,3 +34,7 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ### Acknowledgments
 Inspired by the classic NYTimes Wordle game.
+
+#### To-Do
+- ~~FIX Major Bug in checking mechanism caused when there exists duplicate letters in the word~~
+- Display available keys left
