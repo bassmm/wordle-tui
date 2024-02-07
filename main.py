@@ -29,7 +29,7 @@ def guessing(valid_guesses: list[str], answer: str) -> bool:
             elif guess_letters[x] in list(answer):  # Check 3: if letter in guess even exists in answer, yellow
                 guess_letters[x] = f'{yellow}{guess_letters[x]}{color_end}'
         for letter in guess:  # Check 4: gets the best result when duplicate letters pass previous checks
-            if len(set(answer)) == len(answer):  # Check 4: Making sure duplicate letters behave as expected
+            if len(set(answer)) == len(answer):  # Making sure duplicate letters behave as expected
                 if f'{yellow}{letter}{color_end}' in guess_letters and f'{green}{letter}{color_end}' in guess_letters:
                     impostor_index = guess_letters.index(f'{yellow}{letter}{color_end}')
                     guess_letters[impostor_index] = letter
