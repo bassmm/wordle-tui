@@ -1,3 +1,4 @@
+import random
 
 def import_words_to_array(filepath: str) -> list:
     words = open(filepath, "r")
@@ -20,7 +21,7 @@ def guessing(valid_guesses: list[str], answer: str) -> bool:
             print(' '.join(guess_letters))
         guess = input('Guess: ')
         
-        while guess not in valid_guesses:  # Check 1: Word is valid english 5-letter word refers to list in words.txt
+        while guess not in valid_guesses:  # Check if Word is valid english 5-letter word refers to list in words.txt
             guess = input('Invalid Word, Try again: ')
         guess_letters = list(guess)
         ans_temp = list(answer)
@@ -32,19 +33,7 @@ def guessing(valid_guesses: list[str], answer: str) -> bool:
             elif guess_letters[x] in ans_temp: # Yellow if in answer but not same position
                 pos_of_guess_letter = ans_temp.index(guess_letters[x])
                 guess_letters[x] = f'{yellow}{guess_letters[x]}{color_end}'
-<<<<<<< HEAD
                 ans_temp[pos_of_guess_letter] = ''
-=======
-        for letter in guess:  # Check 4: gets the best result when duplicate letters pass previous checks
-            if len(set(answer)) == len(answer):  # Making sure duplicate letters behave as expected
-                if f'{yellow}{letter}{color_end}' in guess_letters and f'{green}{letter}{color_end}' in guess_letters:
-                    impostor_index = guess_letters.index(f'{yellow}{letter}{color_end}')
-                    guess_letters[impostor_index] = letter
-            if len(set(answer)) + 1 == len(answer) and len(set(guess)) == 3:
-                if f'{yellow}{letter}{color_end}' in guess_letters and f'{yellow}{letter}{color_end}' in guess_letters:
-                    impostor_index = guess_letters.index(f'{yellow}{letter}{color_end}')
-                    guess_letters[impostor_index] = letter
->>>>>>> 4162f90568b9661256c53939cfd8e3eecaf6d342
         guesses.append(guess_letters)
         guess_count += 1
     if guess == answer:
