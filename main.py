@@ -45,7 +45,7 @@ def main():
     answers = import_words_to_array("answers.txt")
 
     answer = (random.choice(answers))
-    print(f'answer(for debugging) = {answer}')  # Uncomment line for debugging
+#    print(f'answer(for debugging) = {answer}')  # Uncomment line for debugging
     win = guessing(words, answer)
     if win:
         print(f'Congrats! The answer as indeed: {answer} :)')
