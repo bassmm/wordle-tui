@@ -1,4 +1,6 @@
 # wordle-tui
+## Overview
+![image](https://github.com/user-attachments/assets/a275f6ee-9cfd-4c9b-9b08-65bfa6c7d47f)
 
 A simple terminal-based Wordle game, where you can guess a hidden word within a limited number of attempts.
 > Game State: Playable
