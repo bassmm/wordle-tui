@@ -20,13 +20,13 @@ def guessing(valid_guesses: list[str], answer: str) -> bool:
         for guess_letters in guesses:
             print(' '.join(guess_letters))
         guess = input('Guess: ')
-        
+
         while guess not in valid_guesses:  # Check if Word is valid english 5-letter word refers to list in words.txt
             guess = input('Invalid Word, Try again: ')
         guess_letters = list(guess)
         ans_temp = list(answer)
-        
-        for x in range(0, 5): # Letter highlighting 
+
+        for x in range(0, 5): # Letter highlighting
             if guess_letters[x] == ans_temp[x]: # Green if in same pos as answer
                guess_letters[x] = f'{green}{guess_letters[x]}{color_end}'
                ans_temp[x] = ''
@@ -42,8 +42,8 @@ def guessing(valid_guesses: list[str], answer: str) -> bool:
 
 
 def main():
-    words = import_words_to_array("words.txt")
-    answers = import_words_to_array("answers.txt")
+    words = import_words_to_array("assets/words.txt")
+    answers = import_words_to_array("assets/answers.txt")
 
     answer = (random.choice(answers))
 #    print(f'answer(for debugging) = {answer}')  # Uncomment line for debugging
