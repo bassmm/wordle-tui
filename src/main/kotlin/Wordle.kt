@@ -13,7 +13,10 @@ fun readWordList(fileName: String): MutableList<String> = File(fileName).useLine
 
 fun pickRandomWord(words: MutableList<String>): String = words.get(Random.nextInt(0, words.size - 1))
 
-fun obtainGuess(attempt: Int, wordList: MutableList<String>): String {
+fun obtainGuess(
+    attempt: Int,
+    wordList: MutableList<String>,
+): String {
     print("$attempt: ")
     var guess = readln().trim().uppercase()
     while (!isValid(guess) || guess !in wordList) {
@@ -23,21 +26,24 @@ fun obtainGuess(attempt: Int, wordList: MutableList<String>): String {
     return guess
 }
 
-fun evaluateGuess(guess: String, target: String): List<Int> {
+fun evaluateGuess(
+    guess: String,
+    target: String,
+): List<Int> {
     // 0 -> not in word
     // 1 -> in word, wrong pos
     // 2 -> in word, correct pos
 
     val targetCharList = target.toMutableList()
-    val eval = mutableListOf(0, 0, 0, 0 ,0)  
-    //pass 1: mark all 2's 
+    val eval = mutableListOf(0, 0, 0, 0, 0)
+    // pass 1: mark all 2's
     guess.forEachIndexed { pos, char ->
-        if (char == targetCharList[pos]){
+        if (char == targetCharList[pos]) {
             eval[pos] = 2
-            targetCharList[pos] = '\u0000' //this will help with the second pass
+            targetCharList[pos] = '\u0000' // this will help with the second pass
         }
     }
-    //pass 2: mark all 1's
+    // pass 2: mark all 1's
     guess.forEachIndexed { pos, char ->
         if (char in targetCharList && eval[pos] != 2) {
             eval[pos] = 1
@@ -47,11 +53,16 @@ fun evaluateGuess(guess: String, target: String): List<Int> {
     return eval.toList()
 }
 
-fun displayGuess(guess: String, matches: List<Int>) {
-      guess.forEachIndexed { pos, char -> when (matches[pos]) {
-        0 -> print("$BOLD$char$RESET ")
-        1 -> print("$BOLD$YELLOW$char$RESET ")
-        2 -> print("$BOLD$GREEN$char$RESET ")
-    }}
+fun displayGuess(
+    guess: String,
+    matches: List<Int>,
+) {
+    guess.forEachIndexed { pos, char ->
+        when (matches[pos]) {
+            0 -> print("$BOLD$char$RESET ")
+            1 -> print("$BOLD$YELLOW$char$RESET ")
+            2 -> print("$BOLD$GREEN$char$RESET ")
+        }
+    }
     println(" ")
 }

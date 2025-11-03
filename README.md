@@ -13,11 +13,8 @@ A simple terminal-based Wordle game, where you can guess a hidden word within a 
 1. Clone the repository to your local machine:
    `git clone https://github.com/bassmm/wordle-tui.git`
 
-2. Navigate to the project directory:
-   `cd wordle-tui`
-
-3. Run the game:
-   `python main.py`
+2. Run the game:
+   `./gradlew run`
 
 Follow the on-screen instructions to guess the hidden word. You have a limited number of attempts.
 
@@ -29,11 +26,11 @@ Follow the on-screen instructions to guess the hidden word. You have a limited n
 
 ### Requirements
 
-- Python 3.x
+- Java Runtime 21+
 
 ### Installation
 
-No additional libraries or dependencies are required. Just make sure you have Python installed on your machine.
+No additional libraries or dependencies are required. Just make sure you have JRE installed on your machine.
 Contributing
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
