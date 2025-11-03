@@ -11,7 +11,7 @@ fun isValid(word: String): Boolean = word.count() == MAX_CHARACTER
 
 fun readWordList(fileName: String): MutableList<String> = File(fileName).useLines { it.toMutableList() }
 
-fun pickRandomWord(words: MutableList<String>): String = words.get(Random.nextInt(0, words.size - 1))
+fun pickRandomWord(words: MutableList<String>): String = words[Random.nextInt(0, words.size - 1)]
 
 fun obtainGuess(
     attempt: Int,

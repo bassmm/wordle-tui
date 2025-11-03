@@ -13,11 +13,11 @@ fun main() {
     while (attempt < MAX_ATTEMPTS && word !in guessList) {
         attempt += 1
         println(CLEAR)
-        guessList.forEachIndexed { pos, guess -> displayGuess(guess, evaluateGuess(guess, word)) }
+        guessList.forEach { guess -> displayGuess(guess, evaluateGuess(guess, word)) }
         guessList.add(obtainGuess(attempt, wordList))
     }
     // win/lose event
     println(CLEAR)
-    guessList.forEachIndexed { pos, guess -> displayGuess(guess, evaluateGuess(guess, word)) }
+    guessList.forEach { guess -> displayGuess(guess, evaluateGuess(guess, word)) }
     if (word in guessList) println("\nCongrats!") else println("\nGood try... the word was $word")
 }
