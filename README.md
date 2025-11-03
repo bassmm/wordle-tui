@@ -2,13 +2,15 @@
 
 ## Overview
 
-![image](https://github.com/user-attachments/assets/a275f6ee-9cfd-4c9b-9b08-65bfa6c7d47f)
+![Wordle](https://github.com/user-attachments/assets/35b67fab-6a9c-43e3-a36a-8fdb923a468d)
 
 A simple terminal-based Wordle game, where you can guess a hidden word within a limited number of attempts.
 
-> Game State: Core features finished
+> Game State: Playable!
 
 ## How to Play
+> [!IMPORTANT]
+> **Portable JAR file release coming soon!**
 
 1. Clone the repository to your local machine:
    `git clone https://github.com/bassmm/wordle-tui.git`
@@ -26,7 +28,7 @@ Follow the on-screen instructions to guess the hidden word. You have a limited n
 
 ### Requirements
 
-- Java Runtime 21+
+- Java Runtime 17+
 
 ### Installation
 
@@ -42,4 +44,5 @@ Inspired by the classic NYTimes Wordle game.
 #### To-Do
 
 - ~~FIX Major Bug in checking mechanism caused when there exists duplicate letters in the word~~
+- Add protable jar file to releases
 - Display available keys left
