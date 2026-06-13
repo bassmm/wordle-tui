@@ -6,19 +6,23 @@
 
 A simple terminal-based Wordle game, where you can guess a hidden word within a limited number of attempts.
 
-> Game State: Playable!
 
 ## How to Play
-> [!IMPORTANT]
-> **Portable JAR file release coming soon!**
+### Download release & extract:
+```bash 
+# 1. Run the game:
+java -jar wordle.jar
+```
+#### Alternatively:
+##### Build from source (Requires Java 25):
+```bash 
+# 1. Clone the repository to your local machine:
+git clone https://github.com/bassmm/wordle-tui.git
 
-1. Clone the repository to your local machine:
-   `git clone https://github.com/bassmm/wordle-tui.git`
-
-2. Run the game:
-   `./gradlew run`
-
-Follow the on-screen instructions to guess the hidden word. You have a limited number of attempts.
+# 2. Run the game:
+./gradlew run
+```
+ Type a valid english 5 letter word to guess. You have a limited number of attempts.
 
 ## Features
 
@@ -43,6 +47,5 @@ Inspired by the classic NYTimes Wordle game.
 
 #### To-Do
 
-- ~~FIX Major Bug in checking mechanism caused when there exists duplicate letters in the word~~
-- Add protable jar file to releases
-- Display available keys left
+- [x] Add protable jar file to releases
+- [ ] Display available keys left
